@@ -12,6 +12,7 @@ public class FormularioAgregar extends JDialog{
 
     public JButton btnAgregar = new JButton("Agregar");
     public JButton btnCancelar = new JButton("Cancelar");
+    public JButton btnLimpiar = new JButton("Limpiar");
 
     public FormularioAgregar(JFrame parent) {
         super(parent, "Agregar", true); // true = modal
@@ -44,8 +45,27 @@ public class FormularioAgregar extends JDialog{
 
         // Botones
         JPanel botones = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+
+        btnAgregar.setBackground(Color.GREEN);
+        btnAgregar.setForeground(Color.WHITE);
+
+        btnCancelar.setBackground(Color.RED);
+        btnCancelar.setForeground(Color.WHITE);
+
+        btnLimpiar.setBackground(Color.ORANGE);
+        btnLimpiar.setForeground(Color.BLACK);
+
+        btnLimpiar.addActionListener(e -> {
+            txtNumeroControl.setText("");
+            txtNombre.setText("");
+            txtMateria.setText("");
+            txtCalificacion.setText("");
+            txtEspecialidad.setText("");
+        });
+
         botones.add(btnAgregar);
         botones.add(btnCancelar);
+        botones.add(btnLimpiar);
 
         add(panel, BorderLayout.CENTER);
         add(botones, BorderLayout.SOUTH);
