@@ -50,7 +50,7 @@ public class ProductoController {
         // Limpiar
         view.btnLimpiar.addActionListener(e -> view.limpiarFormulario());
 
-
+         view.act_eliminar.addActionListener(e -> eliminarSeleccionado());
         // Formulario
         view.act_agregar.addActionListener(e -> {
             // Crea la ventana del formulario para agregar
@@ -95,6 +95,7 @@ public class ProductoController {
             form.setVisible(true);
         });
     }
+
 
     private void modificarSeleccionado() {
         int fila = view.tabla.getSelectedRow();
