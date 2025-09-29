@@ -26,6 +26,25 @@ public class ProductoController {
         refrescarTabla();
     }
 
+    private void eliminarSeleccionado() {
+        int fila = view.tabla.getSelectedRow();
+        if (fila >= 0) {
+            Producto seleccionado = view.tableModel.getAt(fila);
+
+            int opcion = JOptionPane.showConfirmDialog(view,
+                    "¿Eliminar el alumno con nombre: " + seleccionado.getNombre() + "?",
+                    "Confirmar", JOptionPane.YES_NO_OPTION);
+
+            if (opcion == JOptionPane.YES_OPTION) {
+                repo.deleteByClave(seleccionado.getNumeroControl());
+                refrescarTabla();
+                JOptionPane.showMessageDialog(view, "Alumno eliminado correctamente");
+            }
+        } else {
+            JOptionPane.showMessageDialog(view, "Seleccione un alumno primero");
+        }
+    }
+
     private void registrarEventos() {
 
         // Limpiar
@@ -46,8 +65,22 @@ public class ProductoController {
                     Double calificacion = Double.parseDouble(form.txtCalificacion.getText().trim());
                     String especialidad = form.txtEspecialidad.getText().trim();
 
+                    // 1. Validar datos
+                    validar(numeroControl, nombre, materia, calificacion);
 
-                    JOptionPane.showMessageDialog(view, "Datos agregados");
+                    // 2. Crear objeto alumno
+                    Producto producto = new Producto(numeroControl, nombre, materia, calificacion, especialidad);
+
+                    // 3. Guardar en el repositorio
+                    repo.create(producto);
+
+                    // 4. Refrescar la tabla de la vista principal
+                    refrescarTabla();
+
+                    // 5. Confirmar y cerrar el formulario
+                    JOptionPane.showMessageDialog(view, "Alumno agregado correctamente");
+                    form.dispose();
+
                 } catch (NumberFormatException nfe) {
                     JOptionPane.showMessageDialog(form, "Datos invalidos", "Error", JOptionPane.ERROR_MESSAGE);
                 } catch (Exception ex) {
@@ -63,6 +96,63 @@ public class ProductoController {
         });
     }
 
+    private void modificarSeleccionado() {
+        int fila = view.tabla.getSelectedRow();
+
+        if (fila >= 0) {
+            Producto seleccionado = view.tableModel.getAt(fila);
+
+            // Crear un formulario igual que para agregar, pero con los datos cargados
+            FormularioAgregar form = new FormularioAgregar(view);
+
+            // Llenar campos con los datos del producto seleccionado
+            form.txtNumeroControl.setText(String.valueOf(seleccionado.getNumeroControl()));
+            form.txtNumeroControl.setEditable(false); // normalmente no se cambia la clave
+            form.txtNombre.setText(seleccionado.getNombre());
+            form.txtMateria.setText(seleccionado.getMateria());
+            form.txtCalificacion.setText(String.valueOf(seleccionado.getCalificacion()));
+            form.txtEspecialidad.setText(seleccionado.getEspecialidad());
+
+            // Botón agregar ahora funciona como "guardar cambios"
+            form.btnAgregar.setText("Guardar cambios");
+            form.btnAgregar.addActionListener(ev -> {
+                try {
+                    String nombre = form.txtNombre.getText().trim();
+                    String materia = form.txtMateria.getText().trim();
+                    Double calificacion = Double.parseDouble(form.txtCalificacion.getText().trim());
+                    String especialidad = form.txtEspecialidad.getText().trim();
+
+                    // Validar datos
+                    validar(seleccionado.getNumeroControl(), nombre, materia, calificacion);
+
+                    // Actualizar objeto
+                    seleccionado.setNombre(nombre);
+                    seleccionado.setMateria(materia);
+                    seleccionado.setCalificacion(calificacion);
+                    seleccionado.setEspecialidad(especialidad);
+
+                    // Refrescar tabla
+                    refrescarTabla();
+
+                    JOptionPane.showMessageDialog(view, "Alumno modificado correctamente");
+                    form.dispose();
+
+                } catch (NumberFormatException nfe) {
+                    JOptionPane.showMessageDialog(form, "Número inválido en los campos", "Error", JOptionPane.ERROR_MESSAGE);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(form, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            });
+
+            // Botón cancelar
+            form.btnCancelar.addActionListener(ev -> form.dispose());
+
+            form.setVisible(true);
+
+        } else {
+            JOptionPane.showMessageDialog(view, "Seleccione un alumno primero");
+        }
+    }
 
     private void refrescarTabla() {
         view.tableModel.setData(repo.findAll());
