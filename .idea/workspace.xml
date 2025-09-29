@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="Ajuste de tipo de dato en Numero de control">
+    <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="Se centran columnas de la tabla">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ProductoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759173892901</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Se centran columnas de la tabla">
+      <option name="closed" value="true" />
+      <created>1759183092927</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1759183092927</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -112,6 +121,7 @@
     <MESSAGE value="Se le da funcion al item agregar" />
     <MESSAGE value="Se le da funcion al item eliminar" />
     <MESSAGE value="Ajuste de tipo de dato en Numero de control" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajuste de tipo de dato en Numero de control" />
+    <MESSAGE value="Se centran columnas de la tabla" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se centran columnas de la tabla" />
   </component>
 </project>
