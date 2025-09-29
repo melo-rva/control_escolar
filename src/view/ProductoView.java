@@ -72,7 +72,7 @@ public class  ProductoView extends JFrame {
 
         // Agregar los submenús a los menús
         menu_con.add(con_buscar);
-        menu_con.setBackground(new Color(0x2D3762));
+        menu_con.setBackground(new Color(0x313A67));
 
         menu_act.add(act_agregar);
         menu_act.add(act_eliminar);
