@@ -23,7 +23,7 @@ public class ProductoController {
         view.tableModel = new ProductoTableModel(repo.findAll());
         view.tabla.setModel(view.tableModel);
 
-        //centrar columnas de la tabla
+        //se centran las columnas de la tabla
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
         for (int i = 0; i < view.tabla.getColumnCount(); i++) {
