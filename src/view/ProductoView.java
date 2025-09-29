@@ -5,6 +5,12 @@ import java.awt.*;
 
 public class  ProductoView extends JFrame {
 
+    // Menu
+    JMenuBar menuBar;
+    JMenu menu_con, menu_act, menu_config;
+    JMenuItem con_buscar;
+    public JMenuItem act_agregar, act_eliminar, act_modificar;
+
     // Titulo
     public JPanel panel_titulos = new JPanel();
 
@@ -34,6 +40,34 @@ public class  ProductoView extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(900, 520);
         setLocationRelativeTo(null);
+
+        // Crear barra de menú
+        menuBar = new JMenuBar();
+        menu_con= new JMenu("Consultar");
+        menu_act= new JMenu("Actualizar");
+        menu_config= new JMenu("Configuración");
+
+        // Submenús
+        con_buscar = new JMenuItem("Buscar");
+
+        act_agregar = new JMenuItem("Agregar");
+        act_eliminar = new JMenuItem("Eliminar");
+        act_modificar = new JMenuItem("Modificar");
+
+        // Agregar los multiples menús a la barra de Menú
+        menuBar.add(menu_con);
+        menuBar.add(menu_act);
+        menuBar.add(menu_config);
+
+        // Agregar los submenús a los menús
+        menu_con.add(con_buscar);
+
+        menu_act.add(act_agregar);
+        menu_act.add(act_eliminar);
+        menu_act.add(act_modificar);
+
+        setJMenuBar(menuBar);
+
 
         // === Panel Formulario (GridBagLayout) ===
         JPanel form = new JPanel(new GridBagLayout());
