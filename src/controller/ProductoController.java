@@ -47,6 +47,8 @@ public class ProductoController {
 
     private void registrarEventos() {
 
+        //Modificar
+        view.act_modificar.addActionListener(e -> modificarSeleccionado());
         // Limpiar
         view.btnLimpiar.addActionListener(e -> view.limpiarFormulario());
 
@@ -95,6 +97,7 @@ public class ProductoController {
             form.setVisible(true);
         });
     }
+
 
 
     private void modificarSeleccionado() {

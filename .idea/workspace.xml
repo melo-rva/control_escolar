@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="Se agrega la barra de menú con sus submenus">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="Se le da funcion al item eliminar">
       <change beforePath="$PROJECT_DIR$/src/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ProductoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,11 +72,29 @@
       <option name="project" value="LOCAL" />
       <updated>1759125937598</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Se le da funcion al item agregar">
+      <option name="closed" value="true" />
+      <created>1759126617091</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759126617091</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Se le da funcion al item eliminar">
+      <option name="closed" value="true" />
+      <created>1759126857934</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759126857934</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se agrega la barra de menú con sus submenus" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega la barra de menú con sus submenus" />
+    <MESSAGE value="Se le da funcion al item agregar" />
+    <MESSAGE value="Se le da funcion al item eliminar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se le da funcion al item eliminar" />
   </component>
 </project>
