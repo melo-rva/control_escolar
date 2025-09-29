@@ -4,6 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class  ProductoView extends JFrame {
+
+    // Titulo
+    public JPanel panel_titulos = new JPanel();
+
+    public JLabel titulo1 = new JLabel("Control escolar");
+    public JLabel titulo2 = new JLabel("Escuela X");
+
+
+
     // Campos
     public JTextField txtClave = new JTextField(10);
     public JTextField txtNombre = new JTextField(20);
@@ -53,19 +62,31 @@ public class  ProductoView extends JFrame {
         g.anchor = GridBagConstraints.WEST;
 
         // === Panel Botones (FlowLayout) ===
-        JPanel botones = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        botones.add(btnAgregar);
-        botones.add(btnLimpiar);
-        botones.add(btnEliminar);
+        //JPanel botones = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        //botones.add(btnAgregar);
+        //botones.add(btnLimpiar);
+        //botones.add(btnEliminar);
 
         // === Tabla (BorderLayout CENTER) ===
         JScrollPane tablaScroll = new JScrollPane(tabla);
 
         // === Layout principal ===
         setLayout(new BorderLayout(8,8));
-        add(form, BorderLayout.NORTH);
-        add(botones, BorderLayout.CENTER);
+
+        //add(form, BorderLayout.NORTH);
+        // add(botones, BorderLayout.CENTER);
+
         add(tablaScroll, BorderLayout.SOUTH);
+
+        panel_titulos.setLayout(new GridLayout(2,1));
+        panel_titulos.add(titulo1);
+        panel_titulos.add(titulo2);
+
+        add(panel_titulos, BorderLayout.NORTH);
+
+        titulo1.setHorizontalAlignment(SwingConstants.CENTER);
+        titulo2.setHorizontalAlignment(SwingConstants.CENTER);
+
     }
 
     public void limpiarFormulario() {
