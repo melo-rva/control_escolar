@@ -10,9 +10,9 @@ public class ProductoRepositorioArreglo {
         return new ArrayList<>(data);
     }
 
-    public Producto findByClave(Double NumeroControl) {
+    public Producto findByClave(int NumeroControl) {
         for (Producto p : data) {
-            if (p.getNumeroControl().equals(NumeroControl)) return p; // usa equals()
+            if (p.getNumeroControl() == (NumeroControl)) return p; // usa equals()
         }
         return null;
     }
@@ -35,8 +35,8 @@ public class ProductoRepositorioArreglo {
         existing.setEspecialidad(p.getEspecialidad());
     }
 
-    public void deleteByClave(Double numeroControl) {
-        data.removeIf(p -> p.getNumeroControl().equals(numeroControl));
+    public void deleteByClave(int numeroControl) {
+        data.removeIf(p -> p.getNumeroControl() == (numeroControl));
     }
 
 

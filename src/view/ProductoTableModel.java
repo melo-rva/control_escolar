@@ -40,7 +40,7 @@ public class ProductoTableModel extends AbstractTableModel {
     @Override
     public Class<?> getColumnClass(int columnIndex) {
         return switch (columnIndex) {
-            case 0 -> String.class;   // Numero_Control
+            case 0 -> Integer.class;   // Numero_Control
             case 1 -> String.class;   // Nombre
             case 2 -> String.class;   // Materia
             case 3 -> Double.class;   // Calificacion

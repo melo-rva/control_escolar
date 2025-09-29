@@ -61,7 +61,7 @@ public class ProductoController {
             // Botón agregar dentro del formulario
             form.btnAgregar.addActionListener(ev -> {
                 try {
-                    Double numeroControl = Double.parseDouble(form.txtNumeroControl.getText().trim());
+                    int numeroControl = Integer.parseInt(form.txtNumeroControl.getText().trim());
                     String nombre = form.txtNombre.getText().trim();
                     String materia = form.txtMateria.getText().trim();
                     Double calificacion = Double.parseDouble(form.txtCalificacion.getText().trim());
@@ -162,8 +162,8 @@ public class ProductoController {
         view.tableModel.setData(repo.findAll());
     }
 
-    private void validar(Double numeroControl, String nombre, String materia, Double calificacion) {
-        if (numeroControl == null)
+    private void validar(int numeroControl, String nombre, String materia, Double calificacion) {
+        if (numeroControl <= 0)
             throw new IllegalArgumentException("El numero de control es requerido.");
         if (nombre.isBlank()) throw new IllegalArgumentException("El nombre es requerido.");
         if (materia.isBlank()) throw new IllegalArgumentException("La materia es requerida.");

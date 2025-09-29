@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="Se le da funcion al item eliminar">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ProductoRepositorioArreglo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ProductoRepositorioArreglo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ProductoTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProductoTableModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +32,12 @@
     &quot;assignee&quot;: &quot;AleksFG7&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/melo-rva/control_escolar.git&quot;,
-    &quot;accountId&quot;: &quot;769e3795-66f3-4df1-a21f-b1ae25a3d349&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/melo-rva/control_escolar.git",
+    "accountId": "304905b2-ba70-4549-90be-80b8f27c8dae"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>

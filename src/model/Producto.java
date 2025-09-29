@@ -1,13 +1,13 @@
 package model;
 
 public class Producto {
-    private Double NumeroControl;
+    private int NumeroControl;
     private String nombre;
     private String materia;
     private Double calificacion;
     private String especialidad;
 
-    public Producto(double NumeroControl, String nombre, String materia, Double calificacion, String especialidad) {
+    public Producto(int NumeroControl, String nombre, String materia, Double calificacion, String especialidad) {
         this.NumeroControl = NumeroControl;
         this.nombre = nombre;
         this.materia = materia;
@@ -15,7 +15,7 @@ public class Producto {
         this.especialidad = especialidad;
     }
 
-    public Double getNumeroControl() { return NumeroControl; }
+    public int getNumeroControl() { return NumeroControl; }
     public String getNombre() { return nombre; }
     public String getMateria() { return materia; }
     public double getCalificacion() { return calificacion; }
