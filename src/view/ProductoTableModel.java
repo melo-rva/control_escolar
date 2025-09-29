@@ -7,7 +7,7 @@ import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
 public class ProductoTableModel extends AbstractTableModel {
-    private final String[] cols = {"Clave","Nombre","Marca","Descripción","Precio"};
+    private final String[] cols = {"Numero_Control","Nombre","Materia","Calificacion","Especialidad"};
     private List<Producto> rows;
 
     public ProductoTableModel(List<Producto> data) {
@@ -28,19 +28,30 @@ public class ProductoTableModel extends AbstractTableModel {
     @Override public Object getValueAt(int rowIndex, int columnIndex) {
         Producto p = rows.get(rowIndex);
         return switch (columnIndex) {
-            case 0 -> p.getClave();
+            case 0 -> p.getNumeroControl();
             case 1 -> p.getNombre();
-            case 2 -> p.getMarca();
-            case 3 -> p.getDescripcion();
-            case 4 -> p.getPrecio();
+            case 2 -> p.getMateria();
+            case 3 -> p.getCalificacion();
+            case 4 -> p.getEspecialidad();
             default -> "";
         };
     }
 
-    @Override public Class<?> getColumnClass(int columnIndex) {
-        return columnIndex == 4 ? Double.class : String.class;
+    @Override
+    public Class<?> getColumnClass(int columnIndex) {
+        return switch (columnIndex) {
+            case 0 -> String.class;   // Numero_Control
+            case 1 -> String.class;   // Nombre
+            case 2 -> String.class;   // Materia
+            case 3 -> Double.class;   // Calificacion
+            case 4 -> String.class;   // Especialidad
+            default -> Object.class;
+        };
     }
 
- //   @Override public boolean isCellEditable(int r, int c) { return false; }
+
+
+
+    //   @Override public boolean isCellEditable(int r, int c) { return false; }
 }
 

@@ -10,35 +10,44 @@ public class ProductoRepositorioArreglo {
         return new ArrayList<>(data);
     }
 
-    public Producto findByClave(String clave) {
+    public Producto findByClave(Double NumeroControl) {
         for (Producto p : data) {
-            if (p.getClave().equalsIgnoreCase(clave)) return p;
+            if (p.getNumeroControl().equals(NumeroControl)) return p; // usa equals()
         }
         return null;
     }
 
     // Crea si no existe; si existe, lanza excepción
     public void create(Producto p) {
-        if (findByClave(p.getClave()) != null) {
-            throw new IllegalArgumentException("La clave ya existe: " + p.getClave());
+        if (findByClave(p.getNumeroControl()) != null) {
+            throw new IllegalArgumentException("La clave ya existe: " + p.getNumeroControl());
         }
         data.add(p);
     }
 
     // Actualiza si existe; si no existe, lanza excepción
     public void update(Producto p) {
-        Producto existing = findByClave(p.getClave());
-        if (existing == null) throw new IllegalArgumentException("No existe clave: " + p.getClave());
+        Producto existing = findByClave(p.getNumeroControl());
+        if (existing == null) throw new IllegalArgumentException("No existe clave: " + p.getNumeroControl());
         existing.setNombre(p.getNombre());
-        existing.setMarca(p.getMarca());
-        existing.setDescripcion(p.getDescripcion());
-        existing.setPrecio(p.getPrecio());
+        existing.setMateria(p.getMateria());
+        existing.setCalificacion(p.getCalificacion());
+        existing.setEspecialidad(p.getEspecialidad());
     }
 
-    public void deleteByClave(String clave) {
-        Producto existing = findByClave(clave);
-        if (existing == null) throw new IllegalArgumentException("No existe clave: " + clave);
-        data.remove(existing);
+    public void deleteByClave(Double numeroControl) {
+        data.removeIf(p -> p.getNumeroControl().equals(numeroControl));
     }
+
+
+
+
+
 }
+
+
+
+
+
+
 

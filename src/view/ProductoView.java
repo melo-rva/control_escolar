@@ -14,11 +14,11 @@ public class  ProductoView extends JFrame {
 
 
     // Campos
-    public JTextField txtClave = new JTextField(10);
+    public JTextField txtNumeroControl = new JTextField(10);
     public JTextField txtNombre = new JTextField(20);
-    public JTextField txtMarca = new JTextField(20);
-    public JTextField txtPrecio = new JTextField(10);
-    public JTextArea  txtDescripcion = new JTextArea(3, 20);
+    public JTextField txtMateria = new JTextField(20);
+    public JTextField txtCalificacion = new JTextField(10);
+    public JTextArea  txtEspecialidad = new JTextArea(3, 20);
 
     // Botones requeridos
     public JButton btnAgregar = new JButton("Agregar");
@@ -43,21 +43,21 @@ public class  ProductoView extends JFrame {
         g.fill = GridBagConstraints.HORIZONTAL;
         int y = 0;
 
-        g.gridx=0; g.gridy=y; form.add(new JLabel("Clave:"), g);
-        g.gridx=1; form.add(txtClave, g);
+        g.gridx=0; g.gridy=y; form.add(new JLabel("Numero de Control:"), g);
+        g.gridx=1; form.add(txtNumeroControl, g);
 
         y++; g.gridx=0; g.gridy=y; form.add(new JLabel("Nombre:"), g);
         g.gridx=1; form.add(txtNombre, g);
 
-        y++; g.gridx=0; g.gridy=y; form.add(new JLabel("Marca:"), g);
-        g.gridx=1; form.add(txtMarca, g);
+        y++; g.gridx=0; g.gridy=y; form.add(new JLabel("Materia:"), g);
+        g.gridx=1; form.add(txtMateria, g);
 
-        y++; g.gridx=0; g.gridy=y; form.add(new JLabel("Precio:"), g);
-        g.gridx=1; form.add(txtPrecio, g);
+        y++; g.gridx=0; g.gridy=y; form.add(new JLabel("Calificacion:"), g);
+        g.gridx=1; form.add(txtCalificacion, g);
 
         y++; g.gridx=0; g.gridy=y; g.anchor = GridBagConstraints.NORTHWEST;
-        form.add(new JLabel("Descripción:"), g);
-        g.gridx=1; JScrollPane sp = new JScrollPane(txtDescripcion);
+        form.add(new JLabel("Especialidad:"), g);
+        g.gridx=1; JScrollPane sp = new JScrollPane(txtEspecialidad);
         form.add(sp, g);
         g.anchor = GridBagConstraints.WEST;
 
@@ -90,11 +90,11 @@ public class  ProductoView extends JFrame {
     }
 
     public void limpiarFormulario() {
-        txtClave.setText("");
+        txtNumeroControl.setText("");
         txtNombre.setText("");
-        txtMarca.setText("");
-        txtDescripcion.setText("");
-        txtPrecio.setText("");
-        txtClave.requestFocus();
+        txtMateria.setText("");
+        txtCalificacion.setText("");
+        txtEspecialidad.setText("");
+        txtNumeroControl.requestFocus();
     }
 }
