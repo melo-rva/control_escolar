@@ -15,7 +15,7 @@ public class  ProductoView extends JFrame {
     public JPanel panel_titulos = new JPanel();
 
     public JLabel titulo1 = new JLabel("Control escolar");
-    public JLabel titulo2 = new JLabel("Escuela X");
+    public JLabel titulo2 = new JLabel("Instituto Tecnológico Nacional de México");
 
 
 
@@ -25,6 +25,7 @@ public class  ProductoView extends JFrame {
     public JTextField txtMateria = new JTextField(20);
     public JTextField txtCalificacion = new JTextField(10);
     public JTextArea  txtEspecialidad = new JTextArea(3, 20);
+
 
     // Botones requeridos
     public JButton btnAgregar = new JButton("Agregar");
@@ -47,12 +48,22 @@ public class  ProductoView extends JFrame {
         menu_act= new JMenu("Actualizar");
         menu_config= new JMenu("Configuración");
 
+        //colores de barra menú
+        menu_con.setForeground(new Color(0xFFFFFFFF, true));
+        menu_act.setForeground(new Color(0xFFFFFFFF, true));
+        menu_config.setForeground(new Color(0xFFFFFFFF, true));
+        menuBar.setBackground(new Color(0x050548));
+
         // Submenús
         con_buscar = new JMenuItem("Buscar");
 
         act_agregar = new JMenuItem("Agregar");
         act_eliminar = new JMenuItem("Eliminar");
         act_modificar = new JMenuItem("Modificar");
+
+        act_agregar.setBackground(new Color(0x7474EA));
+        act_eliminar.setBackground(new Color(0x7474EA));
+        act_modificar.setBackground(new Color(0x7474EA));
 
         // Agregar los multiples menús a la barra de Menú
         menuBar.add(menu_con);
@@ -61,6 +72,7 @@ public class  ProductoView extends JFrame {
 
         // Agregar los submenús a los menús
         menu_con.add(con_buscar);
+        menu_con.setBackground(new Color(0x5A5AB4));
 
         menu_act.add(act_agregar);
         menu_act.add(act_eliminar);

@@ -20,7 +20,7 @@ public class FormularioAgregar extends JDialog{
         setLocationRelativeTo(parent);
 
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.setBackground(Color.LIGHT_GRAY);
+        panel.setBackground(new Color(0x4242E8));
         GridBagConstraints g = new GridBagConstraints();
         g.insets = new Insets(4,4,4,4);
         g.fill = GridBagConstraints.HORIZONTAL;

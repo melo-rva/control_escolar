@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="" />
+    <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/FormularioAgregar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/FormularioAgregar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ProductoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ProductoView.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +33,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/melo-rva/control_escolar.git",
-    "accountId": "304905b2-ba70-4549-90be-80b8f27c8dae"
+    "accountId": "0efd05fd-49be-4489-9956-08e43c9aa6bb"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -103,5 +107,16 @@
     <MESSAGE value="Se le da funcion al item eliminar" />
     <MESSAGE value="Ajuste de tipo de dato en Numero de control" />
     <option name="LAST_COMMIT_MESSAGE" value="Ajuste de tipo de dato en Numero de control" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/view/FormularioAgregar.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
