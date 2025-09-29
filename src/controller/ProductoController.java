@@ -2,6 +2,7 @@ package controller;
 
 import model.Producto;
 import model.ProductoRepositorioArreglo;
+import view.FormularioAgregar;
 import view.ProductoTableModel;
 import view.ProductoView;
 
@@ -26,85 +27,42 @@ public class ProductoController {
     }
 
     private void registrarEventos() {
-        // ACEPTAR: crea o actualiza según exista la clave
-        view.btnAgregar.addActionListener(e -> onAceptar());
 
-        // LIMPIAR: limpia formulario
+        // Limpiar
         view.btnLimpiar.addActionListener(e -> view.limpiarFormulario());
 
-        // CANCELAR: elimina registro seleccionado (o cambia a cerrar ventana si prefieres)
-        view.btnEliminar.addActionListener(e -> onEliminarSeleccionado());
-        // Para que "Cancelar" cierre la ventana, cambia a:
-        // view.btnCancelar.addActionListener(e -> view.dispose());
 
-        // Cargar datos al seleccionar fila
-        view.tabla.addMouseListener(new MouseAdapter() {
-            @Override public void mouseClicked(MouseEvent e) {
-                int row = view.tabla.getSelectedRow();
-                if (row >= 0) cargarFormularioDesdeTabla(row);
-            }
+        // Formulario
+        view.act_agregar.addActionListener(e -> {
+            // Crea la ventana del formulario para agregar
+            FormularioAgregar form = new FormularioAgregar(view);
+
+            // Botón agregar dentro del formulario
+            form.btnAgregar.addActionListener(ev -> {
+                try {
+                    Double numeroControl = Double.parseDouble(form.txtNumeroControl.getText().trim());
+                    String nombre = form.txtNombre.getText().trim();
+                    String materia = form.txtMateria.getText().trim();
+                    Double calificacion = Double.parseDouble(form.txtCalificacion.getText().trim());
+                    String especialidad = form.txtEspecialidad.getText().trim();
+
+
+                    JOptionPane.showMessageDialog(view, "Datos agregados");
+                } catch (NumberFormatException nfe) {
+                    JOptionPane.showMessageDialog(form, "Datos invalidos", "Error", JOptionPane.ERROR_MESSAGE);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(form, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            });
+
+            // Botón cancelar solo cierra el formulario
+            form.btnCancelar.addActionListener(ev -> form.dispose());
+
+            // Mostrar el formulario
+            form.setVisible(true);
         });
     }
 
-    private void onAceptar() {
-        try {
-            Double NumeroControl = Double.parseDouble(view.txtNumeroControl.getText().trim());
-            String nombre = view.txtNombre.getText().trim();
-            String materia = view.txtMateria.getText().trim();
-            Double calificacion = Double.parseDouble(view.txtCalificacion.getText().trim());
-            String especialidad = view.txtEspecialidad.getText().trim();
-
-            validar(NumeroControl, nombre, materia, calificacion);
-
-            Producto existente = repo.findByClave(NumeroControl);
-            if (existente == null) {
-                // crear
-                repo.create(new Producto(NumeroControl, nombre, materia, calificacion, especialidad));
-                JOptionPane.showMessageDialog(view, "Alumno agregado.");
-            } else {
-                // actualizar
-                repo.update(new Producto(NumeroControl, nombre, materia, calificacion, especialidad));
-                JOptionPane.showMessageDialog(view, "Alumno actualizado.");
-            }
-            refrescarTabla();
-            view.limpiarFormulario();
-        } catch (NumberFormatException nfe) {
-            mostrarError("Calificacion inválido. Ejemplo: 199.99");
-        } catch (Exception ex) {
-            mostrarError(ex.getMessage());
-        }
-    }
-
-    private void onEliminarSeleccionado() {
-        int row = view.tabla.getSelectedRow();
-        if (row < 0) {
-            mostrarError("Selecciona un registro en la tabla para eliminar.");
-            return;
-        }
-        Producto p = view.tableModel.getAt(row);
-        int opt = JOptionPane.showConfirmDialog(view,
-                "¿Eliminar producto con clave " + p.getNumeroControl() + "?", "Confirmar",
-                JOptionPane.YES_NO_OPTION);
-        if (opt == JOptionPane.YES_OPTION) {
-            try {
-                repo.deleteByClave(p.getNumeroControl());
-                refrescarTabla();
-                view.limpiarFormulario();
-                JOptionPane.showMessageDialog(view, "Producto eliminado.");
-            } catch (Exception ex) {
-                mostrarError(ex.getMessage());
-            }
-        }
-    }
-
-    private void cargarFormularioDesdeTabla(int row) {
-        Producto p = view.tableModel.getAt(row);
-        view.txtNumeroControl.setText(String.valueOf(Double.valueOf(p.getNumeroControl())));
-        view.txtNombre.setText(p.getNombre());
-        view.txtMateria.setText(p.getMateria());
-        view.txtCalificacion.setText(String.valueOf(Double.valueOf(p.getCalificacion())));
-        view.txtEspecialidad.setText(String.valueOf(p.getEspecialidad()));
-    }
 
     private void refrescarTabla() {
         view.tableModel.setData(repo.findAll());
@@ -121,4 +79,6 @@ public class ProductoController {
     private void mostrarError(String msg) {
         JOptionPane.showMessageDialog(view, msg, "Error", JOptionPane.ERROR_MESSAGE);
     }
+
+
 }
