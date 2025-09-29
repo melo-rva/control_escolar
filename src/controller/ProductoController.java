@@ -7,6 +7,7 @@ import view.ProductoTableModel;
 import view.ProductoView;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -21,6 +22,13 @@ public class ProductoController {
         // Inicializar tabla
         view.tableModel = new ProductoTableModel(repo.findAll());
         view.tabla.setModel(view.tableModel);
+
+        //centrar columnas de la tabla
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        for (int i = 0; i < view.tabla.getColumnCount(); i++) {
+            view.tabla.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
 
         registrarEventos();
         refrescarTabla();
