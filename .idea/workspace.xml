@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="Se centran columnas de la tabla">
+    <list default="true" id="f365e259-3149-42d2-888c-2e3ac9fec069" name="Changes" comment="Se le da funcion al item modificar">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AlumnoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ProductoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AlumnoView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +37,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/melo-rva/control_escolar.git&quot;,
-    &quot;accountId&quot;: &quot;304905b2-ba70-4549-90be-80b8f27c8dae&quot;
+    &quot;accountId&quot;: &quot;32251ea4-707d-46b7-a8e3-23cbe8dfe299&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -48,9 +53,10 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/figue/OneDrive/Escritorio/5TO SEMESTRE/TOPICOS/MeloMVCCRUDtabla/MVCCRUDtabla&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/figue/OneDrive/Escritorio/MVCCRUDMySQLMaven/MVCCRUDMySQLMaven&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -123,5 +129,16 @@
     <MESSAGE value="Ajuste de tipo de dato en Numero de control" />
     <MESSAGE value="Se centran columnas de la tabla" />
     <option name="LAST_COMMIT_MESSAGE" value="Se centran columnas de la tabla" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controller/AlumnoController.java</url>
+          <line>183</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

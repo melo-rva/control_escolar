@@ -4,18 +4,16 @@ import model.Producto;
 import model.ProductoRepositorioArreglo;
 import view.FormularioAgregar;
 import view.ProductoTableModel;
-import view.ProductoView;
+import view.AlumnoView;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
-public class ProductoController {
+public class AlumnoController {
     private final ProductoRepositorioArreglo repo;
-    private final ProductoView view;
+    private final AlumnoView view;
 
-    public ProductoController(ProductoRepositorioArreglo repo, ProductoView view) {
+    public AlumnoController(ProductoRepositorioArreglo repo, AlumnoView view) {
         this.repo = repo;
         this.view = view;
 

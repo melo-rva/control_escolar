@@ -3,7 +3,7 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
-public class  ProductoView extends JFrame {
+public class AlumnoView extends JFrame {
 
     // Menu
     JMenuBar menuBar;
@@ -36,7 +36,7 @@ public class  ProductoView extends JFrame {
     public JTable tabla = new JTable();
     public ProductoTableModel tableModel;
 
-    public ProductoView() {
+    public AlumnoView() {
         super("Catalogo de Productos - MVC Guardar en Arreglo");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(900, 520);

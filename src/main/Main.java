@@ -1,19 +1,20 @@
 
 package main;
 
-import model.ProductoRepositorioArreglo;
-import view.ProductoView;
-import controller.ProductoController;
-
-import javax.swing.*;
+import controller.LoginController;
+import model.AppModel;
+import model.AuthService;
+import view.AlumnoView;
+import view.LoginDialog;
 
 public class Main {
     public static void main(String[] args) {
-   //     SwingUtilities.invokeLater(() -> {
-            ProductoRepositorioArreglo repo = new ProductoRepositorioArreglo();
-            ProductoView view = new ProductoView();
-            new ProductoController(repo, view);
-            view.setVisible(true);
-    //    });
+        AppModel model = new AppModel();
+        AuthService auth = new AuthService();
+        LoginDialog dialog = new LoginDialog(null);
+        AlumnoView alumnoView = new AlumnoView();
+
+        LoginController controller = new LoginController(model, auth, dialog, alumnoView);
+        dialog.setVisible(true);
     }
 }
